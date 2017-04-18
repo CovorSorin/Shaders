@@ -1,5 +1,10 @@
 ﻿Shader "Custom/Colored UV"
 {
+	Properties
+	{
+		_MainTex("Texture", 2D) = "white"{}
+	}
+
 	SubShader
 	{
 		Tags
@@ -18,8 +23,8 @@
 			struct appdata
 			{
 				float4 vertex : POSITION;
-				float4 uv : TEXCOORD0; 	// UV0 data
-				float3 nm : NORMAL;		// NORMAL data
+			    float4 uv : TEXCOORD0; // UV0 data
+				float3 nm : NORMAL;    // NORMAL data
 			};
 
 			// vertex to fragment
