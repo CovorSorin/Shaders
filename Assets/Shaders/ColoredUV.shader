@@ -19,7 +19,7 @@
 			{
 				float4 vertex : POSITION;
 				float4 uv : TEXCOORD0; 	// UV0 data
-				float3 nm : NORMAL;		// NORMAL data
+				float3 nm : NORMAL;	// NORMAL data
 			};
 
 			// vertex to fragment
