@@ -1,3 +1,7 @@
-# Shaders
 A repository to keep shader related stuff.</br>
-Most of the stuff is inspired from <a href="https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg">Making Stuff Look Good With Unity</a>.</br>
+
+Resources: <br>
+<a href="https://www.youtube.com/channel/UCEklP9iLcpExB8vp_fWQseg">Making Stuff Look Good With Unity</a></br>
+
+Unity Live Training:<br>
+https://unity3d.com/learn/tutorials/topics/graphics/session-introduction?playlist=17102 <br>
