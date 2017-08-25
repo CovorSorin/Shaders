@@ -1,12 +1,10 @@
-﻿// Based on http://wiki.unity3d.com/index.php/Silhouette-Outlined_Diffuse
-		
-Shader "Custom/Outline" 
+﻿
+Shader "Custom/Silhouette" 
 {
 	Properties 
 	{
 		_Color("Main Color", Color) = (1, 1, 1, 1)
-		_OutlineColor("Outline Color", Color) = (0, 0, 0, 1)
-		_Outline("Outline Width", Range (0.0, 5)) = 0.2
+		_SilhouetteColor("Outline Color", Color) = (0, 0, 0, 1)
 		_MainTex("Texture", 2D) = "white" {}
 	}
 
@@ -24,27 +22,14 @@ Shader "Custom/Outline"
 		float4 pos : POSITION;
 		float4 color : COLOR;
 	};
-	 
-	uniform float _Outline;
-	uniform float4 _OutlineColor;
+	
+	uniform float4 _SilhouetteColor;
 	 
 	v2f vert(appdata v) 
 	{
 		v2f o;
-		
-		// Create a copy of the vertex data scaled along the normals.
-		/*
 		o.pos = UnityObjectToClipPos(v.vertex);
-		float3 norm = mul((float3x3)UNITY_MATRIX_IT_MV, v.normal);
-		float2 offset = TransformViewToProjection(norm.xy);
-		o.pos.xy += offset * o.pos.z * _Outline;
-		*/
-
-		// Alternately, create a copy of the vertex data scaled by increasing size in all directions.
-		v.vertex.xyz *= (_Outline + 1);
-		o.pos = UnityObjectToClipPos(v.vertex);
-
-		o.color = _OutlineColor;
+		o.color = _SilhouetteColor;
 		return o;
 	}
 
@@ -56,11 +41,11 @@ Shader "Custom/Outline"
  
 		Pass 
 		{
-			Name "OUTLINE"
+			Name "SILHOUETTE"
 			Cull Off
 			ZWrite Off
 			ColorMask RGB // Alpha is not used.
-
+			ZTest Always // Allows the silhouette to be seen through other objects.
 			Blend SrcAlpha OneMinusSrcAlpha
 
 			CGPROGRAM
