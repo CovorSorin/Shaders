@@ -7,11 +7,11 @@ Transparent Shader
 
 Outline Shader
 --------
-![Outline] (Images/outline.PNG)
+![Outline] (/Images/outline.PNG)
 
 Cel Shading
 --------
-[!Cel] (Images/celshading.PNG)
+[!Cel] (/Images/celshading.PNG)
 
 Resources:
 --------
