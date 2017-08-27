@@ -1,9 +1,9 @@
-﻿Shader "Custom/Texture"
+﻿Shader "Custom/Transparency"
 {
 	Properties
 	{
 		_MainTex("Texture", 2D) = "white"{}
-		_Color("Color", Color) = (1,1,1,1)
+		_Color("Color", Color) = (1, 1, 1, 1)
 	}
 
 	SubShader
@@ -11,7 +11,6 @@
 		Tags
 		{
 			"Queue" = "Transparent"
-			"PreviewType" = "Planne"
 		}
 
 		Pass
@@ -27,14 +26,13 @@
 			struct appdata
 			{
 				float4 vertex : POSITION;
-			    	float2 uv : TEXCOORD0; // UV0 data
+			    float2 uv : TEXCOORD0;
 			};
 
-			// vertex to fragment
 			struct v2f
 			{
 				float4 vertex : SV_POSITION;
-				float2 uv : TEXCOORD0;  	
+				float2 uv : TEXCOORD0;
 			};
 
 			v2f vert(appdata v)

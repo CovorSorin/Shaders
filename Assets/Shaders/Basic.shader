@@ -1,14 +1,9 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
 
 Shader "Custom/Basic"
 {
 	SubShader
 	{
-		Tags
-		{
-			"PreviewType" = "Plane"
-		}
-
 		Pass
 		{
 			CGPROGRAM
